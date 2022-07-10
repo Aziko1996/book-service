@@ -25,6 +25,7 @@ public class BookController {
         return bookRepository.save(book);
     }
 
+
     @GetMapping("/books")
     public List<Book> findBooks() {
         return bookRepository.findAll().stream().sorted(Comparator.comparing(Book::getPrice)).collect(Collectors.toList());
